@@ -1,0 +1,15 @@
+<ion-header>
+<ion-navbar>
+<ion-title>
+Registration
+</ion-title>
+</ion-navbar>
+</ion-header>
+<ion-content>
+<div>
+<span>Sign Up</span>
+</div>
+<div>
+
+</div>
+</ion-content>
