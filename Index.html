@@ -1,24 +1,445 @@
-<ion-header>
-<ion-navbar>
-<ion-title>
-Registration
-</ion-title>
-</ion-navbar>
-</ion-header>
-<ion-content>
-<div>
-<span>Sign Up</span>
-</div>
-<div>
-<ion-list>
-<ion-item>
-<ion-label>
-First Name
-</ion-label>
-<ion-input type="text">
-</ion-input>
-</ion-item>
-</ion-list>
+<html>
+<head>
+    <title>
+        Ionic World
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <!-- awesone fonts css-->
+    <link href="css2/css/font-awesome.css" rel="stylesheet" type="text/css2">
+    <!-- owl carousel css-->
+    <link rel="stylesheet" href="css2/css/owl-carousel/assets/owl.carousel.min.css" type="text/css2/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css2/css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css2/css/style.css">
+    <link rel="icon" type="images/logo">
+    <style>
+        .hd-1 {
+            font-size: 40px;
+            color: #00aef8;
+            font-weight: bold;
+        }
 
-</div>
-</ion-content>
+        .hd-2 {
+            font-size: 17px;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            font-weight: 100;
+        }
+
+        .menu {
+            position: sticky;
+            top: 0;
+            background-color: #009900;
+            /* padding:10px 0px 10px 0px;  */
+            color: white;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .menu a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        /* .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+} */
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: -32px;
+            color: red;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 22px 0;
+            border: none;
+            border-radius: 10px;
+            background: #f1f1f1;
+        }
+
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            border-radius: 10px;
+            padding: 8px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* Set a style for the submit button */
+        .signup-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .login-form {
+            position: absolute;
+            right: 0;
+            margin: 20px;
+            max-width: 300px;
+            padding: 16px;
+            background-color: white;
+        }
+
+        .login-font {
+            font-size: 20px;
+            color: #4CAF50;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /*centre the display image inside the container*/
+        /* .imgcontainer { 
+        text-align: center; 
+        margin: 24px 0 12px 0; 
+        position: relative; 
+    }  */
+
+        /*set image properties*/
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        /*set padding to the container*/
+        .container {
+            padding: 16px;
+        }
+
+        /*set the forgot password text*/
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /*set the Modal background*/
+        .modal2 {
+            /* display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0, 0, 0); 
+        background-color: rgba(0, 0, 0, 0.4); 
+        padding-top: 60px;  */
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal2-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 25%;
+        }
+
+        .close2 {
+            float: right;
+            margin-right: 18px;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 6px;
+            color: red;
+        }
+
+        .close2:hover,
+        .close2:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        [type=submit],
+        button,
+        html [type=button] {
+            border: none;
+            -webkit-appearance: button;
+            width: -webkit-fill-available;
+            border-radius: 10px;
+            padding: 5px;
+            background: #00aef8;
+        }
+
+        /*style the model content box*/
+
+        /* add zoom animation*/
+        .animate {
+            -webkit-animation: animatezoom 0.4s;
+            animation: animatezoom 0.4s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+        <div class="container"><a class="navbar-brand">Ionic</a>
+            <!-- <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                        class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button> -->
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="indexf.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bottom">Documents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="indexf.html">Installation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="indexf.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="indexf.html">Contact</a></li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a id="myBtn" href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">login</a>
+                    <a href="#" onclick="document.getElementById('id01').style.display='block'"
+                        class="btn btn-info my-2 my-sm-0 text-uppercase" data-toggle="modal"
+                        data-target="#exampleModal">sign up</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid gtco-banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1> Learn Ionic Framework
+                        and build Hybrid Mobile Apps</h1>
+                    <p></p>
+                    <a href="#">Contact Us <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-md-6">
+                    <div class="card"><img class="card-img-top img-fluid" src="images/banner-img.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- signup using modal -->
+    <div id="myModallogin" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <form class="login-form">
+                <h1 class="login-font">Login</h1>
+                <span aria-label="Close" data-dismiss="modal" class="close"
+                title="Close Modal">×</span>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="signup-btn">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+                <br>
+
+                <a style="color:#00218d;">SignUp</a><br>
+                <div align="center" style="color:red;">Forget Password?</div>
+            </form>
+        </div>
+
+    </div>
+    <!-- Modal 2 using bootstrap -->
+    <!-- Modal -->
+    <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>  -->
+    <div>
+        <div id="id01" class="modal2">
+
+            <form class="modal2-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close2"
+                        title="Close Modal">×</span>
+                </div>
+                <div class="container">
+                    <h1 class="login-font">Sign up</h1>
+                    <label><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <label for="email"><b>Email id</b></label>
+                    <input type="email" placeholder="Enter email id" name="ename" required>
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit">Proceed</button>
+                    <!-- <input type="checkbox" checked="checked"> Remember me  -->
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">Cancel</button> -->
+                    <!-- <span class="psw">Forgot <a href="#">password?</a></span>  -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr class="new1">
+    <div><a name="bottom"/>
+            <p>The list of ionic Documents:</p>
+            <ul style="">
+               <li>About</li>
+               <li>Installation</li>
+               <ul>Components
+                   <li>Input</li>
+                   <li>Button</li>
+                   <li>Label</li>
+                   <li>Radio</li>
+                   <li>Tab</li>
+                   <li>badge</li>
+
+               </ul>
+            </ul>
+       
+    </div>
+
+    <script>
+        // Get the modal
+        // $('#myModal').modal(options)
+        var modal = document.getElementById('id01');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        var modal = document.getElementById("myModallogin");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+         </script>
+
+
+    <footer>Footer Section</footer>
+
+</body>
+
+</html>
