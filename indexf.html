@@ -1,0 +1,287 @@
+<html>
+
+<head>
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/hero-slider.css">
+    <link rel="stylesheet" href="css/tooplate-style.css">
+    <link rel="icon" type="images/logo">
+    <style>
+        .hd-1 {
+            font-size: 40px;
+            color: #00aef8;
+            font-weight: bold;
+        }
+
+        .hd-2 {
+            font-size: 17px;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            font-weight: 100;
+        }
+
+        body {
+            margin: 0 auto;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .menu {
+            position: sticky;
+            top: 0;
+            background-color: #009900;
+            /* padding:10px 0px 10px 0px;  */
+            color: white;
+            margin: 0 auto;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .menu a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .body_sec {
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* Set a style for the submit button */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .login-form {
+            position: absolute;
+            right: 0;
+            margin: 20px;
+            max-width: 300px;
+            padding: 16px;
+            background-color: white;
+        }
+
+        .login-font {
+            font-size: 20px;
+            color: #4CAF50;
+        }
+
+        .nav-list {
+            float: left;
+            width: 30%;
+            height: 300px;
+            /* only for demonstration, should be removed */
+            background: #ccc;
+            padding: 20px;
+        }
+
+        .welcome-part1 {
+            margin-left: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Bar -->
+
+    <header>
+        <div class="hd-1">Ionic framework</div>
+        <div class="hd-2">Learn any time any where</div>
+
+    </header>
+    <!-- Menu Navigation Bar -->
+    <div class="menu">
+        <a href="installation.html">About</a>
+        <a href="installation.html">Download</a>
+        <a href="installation.html">Installation</a>
+        <a href="installation.html">Documents</a>
+        <div class="menu-log">
+            <a href="installation.html">Contact</a>
+        </div>
+    </div>
+    <!-- Body section -->
+    <!-- <div class="body_sec"> -->
+    <!-- <section id="Content"> -->
+    <section class="cd-hero">
+        <ul class="cd-hero-slider autoplay">
+            <!-- 
+                            <ul class="cd-hero-slider autoplay"> for slider auto play 
+                            <ul class="cd-hero-slider"> for disabled auto play
+                        -->
+            <li class="selected first-slide">
+                <form class="login-form">
+                    <h1 class="login-font">Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit" class="btn">Login</button>
+                    <br>
+
+                    <a style="color:#00218d;">SignUp</a><br>
+                    <div align="center" style="color:red;">Forget Password?</div>
+                </form>
+
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+                        <div class="welcome-part1">
+                            <span>Welcome to</span>
+                            <h2>Ionic World</h2>
+                            <p>Create hybrid app using ionic framework that is easy to code build and run.</p>
+                            <div class="primary-button">
+                                <a href="#" class="scroll-link" data-id="about">Discover More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- .cd-full-width -->
+            </li>
+
+
+
+            <li class="second-slide">
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+                        <span>We Are Perfect Staffs</span>
+                        <h2>Our Team Members</h2>
+                        <p>Donec dolor ipsum, laoreet nec metus non, tempus elementum massa. Donec non elit rhoncus,
+                            vestibulum enim sed, rutrum arcu.</p>
+                        <div class="primary-button">
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div> <!-- .cd-full-width -->
+            </li>
+
+            <li class="third-slide">
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+                        <span>Design is a hobby</span>
+                        <h2>Responsive Layout</h2>
+                        <p>Integer ut dolor eget magna congue gravida ut at arcu. Vivamus maximus neque quis luctus
+                            tempus. Vestibulum consequat.</p>
+                        <div class="primary-button">
+                            <a href="#">View Details</a>
+                        </div>
+                    </div>
+                </div> <!-- .cd-full-width -->
+            </li>
+        </ul> <!-- .cd-hero-slider -->
+
+        <div class="cd-slider-nav">
+            <nav>
+                <span class="cd-marker item-1"></span>
+
+                <ul>
+                    <li class="selected"><a href="#0"></a></li>
+                    <li><a href="#0"></a></li>
+                    <li><a href="#0"></a></li>
+                </ul>
+            </nav>
+        </div> <!-- .cd-slider-nav -->
+    </section>
+    <!-- </section> -->
+    <!-- </div> -->
+    <div id="about" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>What We Do</h4>
+                        <div class="line-dec"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item first-service">
+                        <div class="icon"></div>
+                        <h4>Easy Customizations</h4>
+                        <p>Meteor is free HTML website template by Tooplate. Feel free to use this layout for your
+                            project.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item second-service">
+                        <div class="icon"></div>
+                        <h4>Creative Ideas</h4>
+                        <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke,
+                            typewriter.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item third-service">
+                        <div class="icon"></div>
+                        <h4>Good Profit</h4>
+                        <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke,
+                            typewriter.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item fourth-service">
+                        <div class="icon"></div>
+                        <h4>Open To Public</h4>
+                        <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke,
+                            typewriter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Footer Section</footer>
+</body>
+
+</html>
